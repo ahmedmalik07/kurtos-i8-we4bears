@@ -1,0 +1,23 @@
+{
+  "name": "Kurtos - Authentic Hungarian Chimney Cakes",
+  "short_name": "Kurtos",
+  "description": "Authentic Hungarian chimney cakes (kürtőskalács) in Islamabad, Pakistan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7f2",
+  "theme_color": "#f1af7b",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
