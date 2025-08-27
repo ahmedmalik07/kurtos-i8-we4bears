@@ -1,10 +1,14 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Clock, Phone, Heart, Coffee, Cake, Sparkles, Facebook, Instagram } from "lucide-react"
+import { MapPin, Clock, Phone, Heart, Coffee, Cake, Sparkles, Facebook, Instagram, Menu } from "lucide-react"
 import TestimonialsSection from "@/components/ui/testimonials-columns"
 
 export default function KurtosLandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -29,10 +33,52 @@ export default function KurtosLandingPage() {
               Visit
             </a>
           </div>
+
+          {/* Mobile Navigation Toggle */}
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="p-2 text-amber-800 hover:bg-amber-50"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Menu className="w-5 h-5" />
+            </Button>
+          </div>
+
           <Button className="bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full px-6">
-            <a href="/menu" className="text-white hover:text-white">Order Now</a>
+            <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">Order Now</a>
           </Button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-amber-100 shadow-lg">
+            <div className="px-4 py-4 space-y-4">
+              <a 
+                href="/menu" 
+                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Menu
+              </a>
+              <a 
+                href="#about" 
+                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href="#visit" 
+                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Visit
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -80,14 +126,14 @@ export default function KurtosLandingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full px-8 py-3">
-                  <a href="/menu" className="text-white hover:text-white">Order Now</a>
+                  <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">Order Now</a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-amber-800 text-amber-800 hover:bg-amber-50 rounded-full px-8 py-3 bg-transparent"
               >
-                Visit Our Café
+                <a href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:text-amber-800">Visit Our Café</a>
               </Button>
             </div>
           </div>
@@ -145,8 +191,8 @@ export default function KurtosLandingPage() {
 
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-amber-900 mb-4">Our Signature Creations</h2>
-            <p className="text-amber-700 text-lg max-w-2xl mx-auto">
+            <h2 className="font-serif text-4xl font-bold text-amber-900 mb-4 animate-rise-up animate-delay-100">Our Signature Creations</h2>
+            <p className="text-amber-700 text-lg max-w-2xl mx-auto animate-rise-up animate-delay-150">
               Each chimney cake is handcrafted with love, using traditional techniques and the finest ingredients
             </p>
           </div>
@@ -177,7 +223,7 @@ export default function KurtosLandingPage() {
             ].map((item, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-3xl overflow-hidden"
+                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-3xl overflow-hidden animate-rise-up animate-delay-${(index + 1) * 100}`}
               >
                 <div className="relative">
                   <img
@@ -189,9 +235,9 @@ export default function KurtosLandingPage() {
                     {item.badge}
                   </Badge>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="font-serif text-xl font-bold text-amber-900 mb-2">{item.name}</h3>
-                  <p className="text-amber-700 leading-relaxed">{item.description}</p>
+                <CardContent className="p-6 group-hover:scale-105 transition-transform duration-300">
+                  <h3 className="font-serif text-xl font-bold text-amber-900 mb-2 group-hover:text-amber-800 transition-colors duration-300">{item.name}</h3>
+                  <p className="text-amber-700 leading-relaxed group-hover:text-amber-600 transition-colors duration-300">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -505,7 +551,7 @@ export default function KurtosLandingPage() {
                     size="lg"
                     className="bg-white text-[#f1af7b] hover:bg-orange-50 rounded-full px-8 py-3 font-semibold"
                   >
-                    <a href="/menu" className="text-[#f1af7b] hover:text-[#f1af7b]">Order Now</a>
+                    <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-[#f1af7b] hover:text-[#f1af7b]">Order Now</a>
                   </Button>
                 </div>
               </CardContent>
