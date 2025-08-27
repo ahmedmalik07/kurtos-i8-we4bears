@@ -13,8 +13,22 @@ export default function KurtosLandingPage() {
     <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-orange-100">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
+          {/* Left side - Mobile menu + Logo */}
           <div className="flex items-center gap-2">
+            {/* Mobile Navigation Toggle - Left side */}
+            <div className="md:hidden mr-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="p-2 text-amber-800 hover:bg-amber-50"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Menu className="w-5 h-5" />
+              </Button>
+            </div>
+            
+            {/* Logo and Signboard */}
             <a href="/" className="hover:opacity-80 transition-opacity duration-200">
               <img src="/logo.png" alt="Kurtos Logo" className="w-8 h-8 object-contain" />
             </a>
@@ -22,7 +36,9 @@ export default function KurtosLandingPage() {
               <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-8 w-auto object-contain" />
             </a>
           </div>
-          <div className="hidden md:flex items-center gap-6 text-sm text-amber-800">
+
+          {/* Center - Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6 text-sm text-amber-800 mx-auto">
             <a href="/menu" className="hover:text-[#f1af7b] transition-colors">
               Menu
             </a>
@@ -34,21 +50,12 @@ export default function KurtosLandingPage() {
             </a>
           </div>
 
-          {/* Mobile Navigation Toggle */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="p-2 text-amber-800 hover:bg-amber-50"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <Menu className="w-5 h-5" />
+          {/* Right side - Order Now Button */}
+          <div className="ml-auto">
+            <Button className="bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full px-6">
+              <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">Order Now</a>
             </Button>
           </div>
-
-          <Button className="bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full px-6">
-            <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">Order Now</a>
-          </Button>
         </div>
 
         {/* Mobile Menu */}
