@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "Kurtos I-8 Islamabad - Fresh Chimney Cakes & Cozy Coffee",
@@ -44,7 +45,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="theme-color" content="#f1af7b" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }

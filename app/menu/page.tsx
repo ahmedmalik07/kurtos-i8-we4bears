@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/hooks/use-toast"
 import {
   Coffee,
   IceCream,
@@ -198,6 +199,7 @@ const buildYourCone = {
 }
 
 export default function MenuPage() {
+  const { toast } = useToast()
   const [cart, setCart] = useState<CartItem[]>([])
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [checkoutStep, setCheckoutStep] = useState<CheckoutStep>(CheckoutStep.CART)
@@ -219,20 +221,54 @@ export default function MenuPage() {
 
     if (existingItem) {
       setCart(cart.map((item) => (item.id === id ? { ...item, quantity: item.quantity + 1 } : item)))
+      toast({
+        title: "Quantity Updated! 🛒",
+        description: `${name} quantity increased to ${existingItem.quantity + 1}`,
+        duration: 3000,
+      })
     } else {
       setCart([...cart, { id, name, price, quantity: 1, size, category }])
+      toast({
+        title: "Added to Cart! 🎉",
+        description: `${name}${size ? ` (${size})` : ""} has been added to your cart`,
+        duration: 3000,
+      })
     }
   }
 
   const removeFromCart = (id: string) => {
+    const itemToRemove = cart.find(item => item.id === id)
     setCart(cart.filter((item) => item.id !== id))
+    
+    if (itemToRemove) {
+      toast({
+        title: "Removed from Cart! ❌",
+        description: `${itemToRemove.name} has been removed from your cart`,
+        duration: 3000,
+      })
+    }
   }
 
   const updateQuantity = (id: string, quantity: number) => {
     if (quantity === 0) {
       removeFromCart(id)
     } else {
+      const itemToUpdate = cart.find(item => item.id === id)
       setCart(cart.map((item) => (item.id === id ? { ...item, quantity } : item)))
+      
+      if (itemToUpdate && quantity > itemToUpdate.quantity) {
+        toast({
+          title: "Quantity Increased! 📈",
+          description: `${itemToUpdate.name} quantity updated to ${quantity}`,
+          duration: 2000,
+        })
+      } else if (itemToUpdate && quantity < itemToUpdate.quantity) {
+        toast({
+          title: "Quantity Decreased! 📉",
+          description: `${itemToUpdate.name} quantity updated to ${quantity}`,
+          duration: 2000,
+        })
+      }
     }
   }
 
@@ -265,6 +301,13 @@ export default function MenuPage() {
     setOrderNumber(newOrderNumber)
     setCheckoutStep(CheckoutStep.CONFIRMATION)
 
+    // Show success toast
+    toast({
+      title: "Order Confirmed! 🎉",
+      description: `Your order #${newOrderNumber} has been placed successfully!`,
+      duration: 5000,
+    })
+
     // Here you would typically send the order to your backend
     console.log("Order confirmed:", {
       orderNumber: newOrderNumber,
@@ -286,6 +329,12 @@ export default function MenuPage() {
     })
     setCheckoutStep(CheckoutStep.CART)
     setIsCartOpen(false)
+    
+    toast({
+      title: "New Order Started! 🆕",
+      description: "Your cart has been cleared for a fresh order",
+      duration: 3000,
+    })
   }
 
   const updateConeBuilder = (step: keyof ConeBuilder, name: string, price: number) => {

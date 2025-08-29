@@ -16,8 +16,8 @@ export default function KurtosLandingPage() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
           {/* Left side - Mobile menu + Logo */}
           <div className="flex items-center gap-2">
-            {/* Mobile Navigation Toggle - Left side */}
-            <div className="md:hidden mr-2">
+            {/* Mobile Navigation Toggle - Temporarily Hidden */}
+            {/* <div className="md:hidden mr-2">
               <Button
                 variant="ghost"
                 size="sm"
@@ -26,7 +26,7 @@ export default function KurtosLandingPage() {
               >
                 <Menu className="w-5 h-5" />
               </Button>
-            </div>
+            </div> */}
             
             {/* Logo and Signboard */}
             <a href="/" className="hover:opacity-80 transition-opacity duration-200">
@@ -37,8 +37,8 @@ export default function KurtosLandingPage() {
             </a>
           </div>
 
-          {/* Center - Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 text-sm text-amber-800 mx-auto">
+          {/* Center - Desktop Navigation - Temporarily Hidden */}
+          {/* <div className="hidden md:flex items-center gap-6 text-sm text-amber-800 mx-auto">
             <a href="/menu" className="hover:text-[#f1af7b] transition-colors">
               Menu
             </a>
@@ -48,7 +48,7 @@ export default function KurtosLandingPage() {
             <a href="#visit" className="hover:text-[#f1af7b] transition-colors">
               Visit
             </a>
-          </div>
+          </div> */}
 
           {/* Right side - Order Now Button */}
           <div className="ml-auto">
@@ -58,8 +58,8 @@ export default function KurtosLandingPage() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
+        {/* Mobile Menu - Temporarily Hidden */}
+        {/* {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-amber-100 shadow-lg">
             <div className="px-4 py-4 space-y-4">
               <a 
@@ -85,7 +85,7 @@ export default function KurtosLandingPage() {
               </a>
             </div>
           </div>
-        )}
+        )} */}
       </nav>
 
       {/* Hero Section */}
