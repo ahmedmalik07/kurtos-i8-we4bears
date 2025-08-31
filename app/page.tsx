@@ -4,125 +4,40 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Clock, Phone, Heart, Coffee, Cake, Sparkles, Facebook, Instagram, Menu } from "lucide-react"
+import Navbar from "@/components/shared/Navbar"
+import Footer from "@/components/shared/Footer"
+import HungarianHero from "@/components/HungarianHero"
+import { SplashCursor } from "@/components/SplashCursor"
+import { GlowCard } from "@/components/spotlight-card"
+import AboutSection from "@/components/AboutSection"
+import { MapPin, Clock, Phone, Heart, Coffee, Cake, Sparkles, Facebook, Instagram } from "lucide-react"
 import TestimonialsSection from "@/components/ui/testimonials-columns"
 
 export default function KurtosLandingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-orange-100">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center">
-          {/* Left side - Mobile menu + Logo */}
-          <div className="flex items-center gap-2">
-            {/* Mobile Navigation Toggle - Temporarily Hidden */}
-            {/* <div className="md:hidden mr-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="p-2 text-amber-800 hover:bg-amber-50"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                <Menu className="w-5 h-5" />
-              </Button>
-            </div> */}
-            
-            {/* Logo and Signboard */}
-            <a href="/" className="hover:opacity-80 transition-opacity duration-200">
-              <img src="/logo.png" alt="Kurtos Logo" className="w-8 h-8 object-contain" />
-            </a>
-            <a href="/" className="hover:opacity-80 transition-opacity duration-200">
-              <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-8 w-auto object-contain" />
-            </a>
-          </div>
+      <Navbar currentPage="home" />
 
-          {/* Center - Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6 text-sm text-amber-800 absolute left-1/2 transform -translate-x-1/2">
-            <a href="/menu" className="hover:text-[#f1af7b] transition-colors">
-              Menu
-            </a>
-            <a href="#testimonials" className="hover:text-[#f1af7b] transition-colors">
-              Reviews
-            </a>
-            <a href="#visit" className="hover:text-[#f1af7b] transition-colors">
-              Visit
-            </a>
-            <a href="#footer" className="hover:text-[#f1af7b] transition-colors">
-              About
-            </a>
-          </div>
-
-          {/* Right side - Order Now Button */}
-          <div className="ml-auto">
-            <Button className="bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full px-6">
-              <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">Order Now</a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-amber-100 shadow-lg">
-            <div className="px-4 py-4 space-y-4">
-              <a 
-                href="/menu" 
-                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Menu
-              </a>
-              <a 
-                href="#testimonials" 
-                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Reviews
-              </a>
-              <a 
-                href="#visit" 
-                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Visit
-              </a>
-              <a 
-                href="#footer" 
-                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </a>
-              
-              {/* Mobile Action Buttons */}
-              <div className="pt-4 border-t border-amber-100 space-y-2">
-                <Button 
-                  className="w-full bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full py-2 text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">
-                    Order Now
-                  </a>
-                </Button>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-white text-[#f1af7b] border border-[#f1af7b] px-4 py-2 rounded-full font-semibold hover:bg-[#f1af7b] hover:text-white transition-colors text-center text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Visit Our Store
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* Hungarian Hero Section */}
+      <HungarianHero />
 
       {/* Hero Section */}
       <section className="relative min-h-screen pastry-bg flex items-center justify-center overflow-hidden">
+        {/* Splash Cursor Effect - Limited to Hero Section */}
+        <div className="absolute inset-0 z-10">
+          <SplashCursor 
+            DENSITY_DISSIPATION={2.8}
+            VELOCITY_DISSIPATION={1.5}
+            SPLAT_RADIUS={0.15}
+            SPLAT_FORCE={4000}
+            COLOR_UPDATE_SPEED={8}
+            TRANSPARENT={true}
+          />
+        </div>
+        
         {/* Floating decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none z-20">
           <div className="floating-element absolute top-20 left-10 text-[#f1af7b] opacity-60 animate-rise-up animate-delay-200">
             <Sparkles className="w-6 h-6" />
           </div>
@@ -137,7 +52,7 @@ export default function KurtosLandingPage() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-30">
           <div className="text-center lg:text-left">
             <div className="animate-rise-up-slow animate-delay-300">
             <h1 className="font-serif text-5xl lg:text-6xl font-bold text-amber-900 mb-6 leading-tight">
@@ -162,18 +77,6 @@ export default function KurtosLandingPage() {
               Authentic Hungarian kürtőskalács baked fresh daily in the heart of Islamabad. Build your perfect chimney
               cake with premium coatings, creamy fillings, and delicious toppings.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full px-8 py-3">
-                  <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">Order Now</a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-amber-800 text-amber-800 hover:bg-amber-50 rounded-full px-8 py-3 bg-transparent"
-              >
-                <a href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad" target="_blank" rel="noopener noreferrer" className="text-amber-800 hover:text-amber-800">Visit Our Café</a>
-              </Button>
-            </div>
           </div>
           </div>
           <div className="relative animate-rise-up-slow animate-delay-400">
@@ -215,80 +118,106 @@ export default function KurtosLandingPage() {
       </div>
 
       {/* Signature Items */}
-      <section id="menu" className="py-20 bg-white relative overflow-hidden">
+      <section id="menu" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
         {/* Top-left roll illustration */}
         <div className="absolute top-4 left-4 opacity-10 pointer-events-none z-0">
           <img 
             src="/roll-illustration.png" 
             alt="Roll illustration top-left" 
-            className="w-48 h-48 object-contain"
+            className="w-32 md:w-48 h-32 md:h-48 object-contain"
           />
         </div>
 
-
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-amber-900 mb-4 animate-rise-up animate-delay-100">Our Signature Creations</h2>
-            <p className="text-amber-700 text-lg max-w-2xl mx-auto animate-rise-up animate-delay-150">
-              Each chimney cake is handcrafted with love, using traditional techniques and the finest ingredients
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-4 md:mb-6 animate-rise-up animate-delay-100 hover:scale-105 transition-transform duration-300 leading-tight tracking-tight">
+              Kurtos Signature Delights
+            </h2>
+            <p className="font-sans text-amber-700 text-base sm:text-lg md:text-xl max-w-3xl mx-auto animate-rise-up animate-delay-150 hover:text-amber-600 transition-colors duration-300 px-4 leading-relaxed font-medium">
+              Curated with love, perfected with tradition, and made to be remembered—every creation is a piece of our story.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
             {[
               {
                 name: "Classic Cinnamon Sugar",
                 description: "Traditional kürtős with warm cinnamon and caramelized sugar coating",
-                image: "/best-seller.png",
+                image: "/golden-chimney-cake-with-cinnamon-sugar-coating.png",
                 badge: "Best Seller",
-                badgeColor: "bg-[#f1af7b]",
+                badgeColor: "from-amber-800 to-amber-950",
+                accent: "from-amber-600 to-orange-700"
               },
               {
                 name: "Signature Cones",
                 description: "Experience our artisanal chimney cakes, each freshly baked and hand-rolled for the perfect swirl.",
-                image: "/fan-favorite.png",
+                image: "/kurtos-hero-cone.png",
                 badge: "Fan Favorite",
-                badgeColor: "bg-amber-800",
+                badgeColor: "from-amber-900 to-yellow-900",
+                accent: "from-orange-600 to-red-700"
               },
               {
                 name: "Pistachio Delight",
                 description: "Premium pistachio coating with vanilla ice cream and pistachio crumbles",
                 image: "/chimney-cake-with-pistachio-coating-and-ice-cream.png",
                 badge: "Premium",
-                badgeColor: "bg-amber-700",
+                badgeColor: "from-yellow-800 to-amber-900",
+                accent: "from-green-600 to-emerald-700"
               },
             ].map((item, index) => (
-              <Card
+              <GlowCard
                 key={index}
-                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-3xl overflow-hidden animate-rise-up animate-delay-${(index + 1) * 100}`}
+                glowColor="darkBrown"
+                size="lg"
+                customSize={true}
+                className={`group relative overflow-hidden rounded-2xl lg:rounded-3xl animate-rise-up animate-delay-${(index + 1) * 100} cursor-pointer transform hover:scale-[1.02] transition-all duration-700 ease-out bg-gradient-to-br from-white via-amber-50/30 to-orange-50/20 hover:from-amber-50/50 hover:via-orange-50/40 hover:to-yellow-50/30 shadow-2xl hover:shadow-3xl border border-amber-100/50 backdrop-blur-sm w-full h-auto`}
               >
-                <div className="relative">
-                  <img
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.name}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <Badge className={`absolute top-4 left-4 ${item.badgeColor} text-white rounded-full px-3 py-1`}>
-                    {item.badge}
-                  </Badge>
+                {/* Elegant background with subtle texture */}
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-900/3 via-orange-800/5 to-yellow-800/3 group-hover:from-amber-900/5 group-hover:via-orange-800/7 group-hover:to-yellow-800/5 transition-all duration-700 rounded-2xl lg:rounded-3xl"></div>
+                
+                {/* Refined content container */}
+                <div className="relative z-10 p-6 sm:p-7 lg:p-8">
+                  {/* Enhanced image container with sophisticated hover effects */}
+                  <div className="relative mb-5 md:mb-6 group-hover:transform group-hover:-translate-y-1 transition-all duration-500">
+                    <div className="relative overflow-hidden rounded-xl lg:rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-amber-200/30">
+                      <img
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.name}
+                        className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      />
+                      
+                      {/* Refined image overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-amber-900/15 via-transparent to-transparent group-hover:from-amber-900/25 transition-all duration-700"></div>
+                      
+                      {/* Elegant shimmer effect */}
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1200 bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
+                    </div>
+                    
+                    {/* Refined badge with elegant typography */}
+                    <div className={`absolute -top-2 -right-2 bg-gradient-to-r ${item.badgeColor} text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-sans font-bold shadow-lg backdrop-blur-sm group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 border border-amber-700/20`}>
+                      {item.badge}
+                    </div>
+                  </div>
+                  
+                  {/* Enhanced typography with Avenir Next consistency */}
+                  <div className="space-y-3 md:space-y-4">
+                    <h3 className="font-sans text-lg sm:text-xl lg:text-2xl font-bold text-amber-900 group-hover:text-amber-800 transition-colors duration-300 group-hover:transform group-hover:scale-[1.02] leading-tight tracking-tight">
+                      {item.name}
+                    </h3>
+                    <p className="font-sans text-amber-700 leading-relaxed group-hover:text-amber-600 transition-colors duration-300 text-sm md:text-base font-medium">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  {/* Refined bottom accent bar */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${item.accent} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-b-2xl lg:rounded-b-3xl`}></div>
+                  
+                  {/* Subtle hover overlay effect */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-amber-400/0 via-orange-400/0 to-yellow-400/0 group-hover:from-amber-400/3 group-hover:via-orange-400/3 group-hover:to-yellow-400/3 transition-all duration-700 rounded-2xl lg:rounded-3xl pointer-events-none"></div>
                 </div>
-                <CardContent className="p-6 group-hover:scale-105 transition-transform duration-300">
-                  <h3 className="font-serif text-xl font-bold text-amber-900 mb-2 group-hover:text-amber-800 transition-colors duration-300">{item.name}</h3>
-                  <p className="text-amber-700 leading-relaxed group-hover:text-amber-600 transition-colors duration-300">{item.description}</p>
-                </CardContent>
-              </Card>
+              </GlowCard>
             ))}
           </div>
-        </div>
-        
-        {/* Top-right roll illustration (reflected) */}
-        <div className="absolute top-4 right-4 opacity-20 pointer-events-none z-0">
-          <img 
-            src="/roll-illustration.png" 
-            alt="Roll illustration top-right" 
-            className="w-48 h-48 object-contain transform scale-x-[-1]"
-          />
         </div>
       </section>
 
@@ -476,39 +405,107 @@ export default function KurtosLandingPage() {
       </section>
 
       {/* Breakfast & Coffee Section */}
-      <section className="py-20 sage-bg">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-20 sage-bg relative overflow-hidden">
+        {/* Interactive background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-[#f1af7b]/10 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-32 h-32 bg-amber-200/10 rounded-full animate-bounce"></div>
+          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-amber-300/10 rounded-full animate-ping"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-serif text-4xl font-bold text-amber-900 mb-6">
-                Slow Mornings,
-                <span className="block text-amber-800">Cozy Coffee</span>
+            <div className="group">
+              <h2 className="font-serif text-4xl font-bold text-amber-900 mb-6 hover:scale-105 transition-transform duration-300 cursor-default">
+                <span className="hover:text-[#f1af7b] transition-colors duration-300">Slow Brews</span>
+                <span className="block text-amber-800 hover:text-amber-900 transition-colors duration-300">Sweet Swirls</span>
               </h2>
-              <p className="text-amber-700 text-lg leading-relaxed mb-6">
-                Start your day with our freshly brewed coffee and warm chimney cakes. Our cozy café atmosphere is
-                perfect for morning meetings, study sessions, or simply enjoying a peaceful moment.
+              <p className="text-amber-700 text-lg leading-relaxed mb-8 hover:text-amber-600 transition-colors duration-300">
+                Begin your day with the aroma of freshly brewed coffee and the comforting swirl of warm Kürtős. Our cafe is a haven for those who cherish quiet indulgence and meaningful moments.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Coffee className="w-5 h-5 text-[#f1af7b]" />
-                  <span className="text-amber-800">Premium arabica coffee beans</span>
+              
+              <div className="space-y-6">
+                <div className="group/item flex items-center gap-4 p-4 rounded-2xl hover:bg-white/50 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#f1af7b] to-amber-600 rounded-full flex items-center justify-center group-hover/item:scale-110 group-hover/item:rotate-12 transition-all duration-300">
+                    <Coffee className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-amber-800 font-medium group-hover/item:text-amber-900 group-hover/item:translate-x-2 transition-all duration-300">
+                    Brewed from the finest origins
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-[#f1af7b]" />
-                  <span className="text-amber-800">Fresh kurtos baked every 30 minutes</span>
+                
+                <div className="group/item flex items-center gap-4 p-4 rounded-2xl hover:bg-white/50 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-amber-600 to-amber-800 rounded-full flex items-center justify-center group-hover/item:scale-110 group-hover/item:rotate-12 transition-all duration-300">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-amber-800 font-medium group-hover/item:text-amber-900 group-hover/item:translate-x-2 transition-all duration-300">
+                    Kürtős baked fresh every 30 minutes
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Heart className="w-5 h-5 text-[#f1af7b]" />
-                  <span className="text-amber-800">Cozy seating for 25 guests</span>
+                
+                <div className="group/item flex items-center gap-4 p-4 rounded-2xl hover:bg-white/50 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-amber-700 to-[#f1af7b] rounded-full flex items-center justify-center group-hover/item:scale-110 group-hover/item:rotate-12 transition-all duration-300">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-amber-800 font-medium group-hover/item:text-amber-900 group-hover/item:translate-x-2 transition-all duration-300">
+                    Perfect pairings of coffee and artisanal delights
+                  </span>
                 </div>
               </div>
+
+              {/* Interactive CTA Button */}
+              <div className="mt-8">
+                <button 
+                  onClick={() => window.open('https://www.foodpanda.pk/restaurant/s7uw/kurtos-kalash', '_blank')}
+                  className="group/btn bg-gradient-to-r from-[#f1af7b] to-amber-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-amber-500/25 transform hover:scale-105 transition-all duration-300 relative overflow-hidden"
+                >
+                  <span className="relative z-10 group-hover/btn:translate-x-1 transition-transform duration-300">
+                    Order Your Perfect Pairing ☕
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-800 translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500"></div>
+                </button>
+              </div>
             </div>
-            <div className="relative">
-              <img
-                src="/morning-section.png"
-                alt="Coffee and kurtos morning experience"
-                className="w-full rounded-3xl shadow-2xl"
-              />
+            
+            <div className="relative group cursor-pointer">
+              {/* Background glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-amber-300/20 to-orange-300/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+              
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+                <img
+                  src="/morning-section.png"
+                  alt="Coffee and kurtos morning experience"
+                  className="w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-500"></div>
+                
+                {/* Floating elements */}
+                <div className="absolute top-6 right-6 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce">
+                  <div className="w-6 h-6 bg-[#f1af7b] rounded-full"></div>
+                </div>
+                
+                {/* Corner decorations */}
+                <div className="absolute bottom-6 left-6 space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                  <div className="w-12 h-1 bg-white/60 rounded-full transform -rotate-12"></div>
+                  <div className="w-8 h-1 bg-amber-300/80 rounded-full transform rotate-12"></div>
+                  <div className="w-6 h-1 bg-orange-300/80 rounded-full transform -rotate-6"></div>
+                </div>
+                
+                {/* Hover info card */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="text-white space-y-2">
+                    <h4 className="font-serif text-lg font-bold">Perfect Pairings</h4>
+                    <p className="text-sm opacity-90">Discover our curated selection of beverages designed to complement every kürtős creation</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative orbiting elements */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full opacity-0 group-hover:opacity-70 group-hover:animate-ping transition-all duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-full opacity-0 group-hover:opacity-70 group-hover:animate-pulse transition-all duration-500 delay-300"></div>
             </div>
           </div>
         </div>
@@ -531,168 +528,93 @@ export default function KurtosLandingPage() {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Location Card */}
-            <Card className="bg-white rounded-3xl shadow-xl border-0 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="h-64 flex items-center justify-center">
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full h-full hover:opacity-90 transition-opacity duration-200"
-                  >
-                    <img
-                      src="/kurtos-map.png"
-                      alt="Kurtos Location Map - I-8 Markaz, Islamabad"
-                      className="w-full h-full object-cover rounded-t-3xl"
-                    />
-                  </a>
-                </div>
-                <div className="p-8">
-                  <h3 className="font-serif text-2xl font-bold text-amber-900 mb-4">Visit Our Café</h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-[#f1af7b]" />
-                      <a
-                        href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-800 hover:text-[#f1af7b] transition-colors underline"
-                      >
-                        I-8 Markaz, Islamabad
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-[#f1af7b]" />
-                      <span className="text-amber-800">Daily 10:00 AM - 11:00 PM</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-[#f1af7b]" />
-                      <span className="text-amber-800">+92 317 581 8580</span>
-                    </div>
+            <GlowCard
+              glowColor="orange"
+              size="lg"
+              customSize={true}
+              className="bg-white rounded-3xl shadow-xl border-0 overflow-hidden w-full h-auto group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer"
+            >
+              <div className="h-64 flex items-center justify-center overflow-hidden rounded-t-3xl">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full h-full hover:opacity-90 transition-opacity duration-200"
+                >
+                  <img
+                    src="/kurtos-map.png"
+                    alt="Kurtos Location Map - I-8 Markaz, Islamabad"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </a>
+              </div>
+              <div className="p-8 group-hover:bg-orange-50/50 transition-colors duration-300">
+                <h3 className="font-serif text-2xl font-bold text-amber-900 mb-4 group-hover:text-[#f1af7b] transition-colors duration-300">Visit Our Café</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 group-hover:translate-x-1 transition-transform duration-300">
+                    <MapPin className="w-5 h-5 text-[#f1af7b] group-hover:scale-110 transition-transform duration-300" />
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-amber-800 hover:text-[#f1af7b] transition-colors underline"
+                    >
+                      I-8 Markaz, Islamabad
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 group-hover:translate-x-1 transition-transform duration-300 delay-75">
+                    <Clock className="w-5 h-5 text-[#f1af7b] group-hover:scale-110 transition-transform duration-300" />
+                    <span className="text-amber-800 group-hover:text-amber-900 transition-colors duration-300">Daily 10:00 AM - 11:00 PM</span>
+                  </div>
+                  <div className="flex items-center gap-3 group-hover:translate-x-1 transition-transform duration-300 delay-150">
+                    <Phone className="w-5 h-5 text-[#f1af7b] group-hover:scale-110 transition-transform duration-300" />
+                    <span className="text-amber-800 group-hover:text-amber-900 transition-colors duration-300">+92 317 581 8580</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </GlowCard>
 
             {/* Order Online Card */}
-            <Card className="bg-gradient-to-br from-[#f1af7b] to-[#e89b66] rounded-3xl shadow-xl border-0 text-white">
-              <CardContent className="p-8 h-full flex flex-col justify-center">
+            <GlowCard
+              glowColor="red"
+              size="lg"
+              customSize={true}
+              className="bg-gradient-to-br from-[#f1af7b] to-[#e89b66] hover:from-[#e89b66] hover:to-[#f1af7b] rounded-3xl shadow-xl border-0 text-white w-full h-auto group hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer"
+            >
+              <div className="p-8 h-full flex flex-col justify-center">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 bg-white/20 group-hover:bg-white/30 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                     <Cake className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold mb-4">Order Now</h3>
-                  <p className="text-orange-100 mb-8 leading-relaxed">
+                  <h3 className="font-serif text-2xl font-bold mb-4 group-hover:scale-105 transition-transform duration-300">Order Now</h3>
+                  <p className="text-orange-100 group-hover:text-white mb-8 leading-relaxed transition-colors duration-300">
                     Craving kurtos? Browse our menu and place your order. Enjoy our fresh chimney cakes delivered to your doorstep.
                   </p>
                   <Button
                     size="lg"
-                    className="bg-white text-[#f1af7b] hover:bg-orange-50 rounded-full px-8 py-3 font-semibold"
+                    className="bg-white text-[#f1af7b] hover:bg-orange-50 hover:scale-110 rounded-full px-8 py-3 font-semibold group-hover:shadow-lg transition-all duration-300"
                   >
-                    <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-[#f1af7b] hover:text-[#f1af7b]">Order Now</a>
+                    <a 
+                      href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#f1af7b] hover:text-[#f1af7b]"
+                    >
+                      Order Now
+                    </a>
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </GlowCard>
           </div>
         </div>
       </section>
 
+      {/* About Section */}
+      <AboutSection />
+
       {/* Footer */}
-      <footer id="footer" className="bg-gradient-to-br from-amber-50 to-orange-50 py-16 relative overflow-hidden">
-        {/* Floating decorations */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="floating-element absolute top-10 left-10 w-3 h-3 bg-[#f1af7b] rounded-full opacity-30"></div>
-          <div className="floating-element absolute top-20 right-20 w-4 h-4 bg-[#f1af7b] rounded-full opacity-20"></div>
-          <div className="floating-element absolute bottom-20 left-1/3 w-2 h-2 bg-[#f1af7b] rounded-full opacity-40"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <a href="/" className="hover:opacity-80 transition-opacity duration-200">
-                <img src="/logo.png" alt="Kurtos Logo" className="w-12 h-12 object-contain" />
-              </a>
-              <a href="/" className="hover:opacity-80 transition-opacity duration-200">
-                <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-16 w-auto object-contain" />
-              </a>
-            </div>
-            <p className="text-amber-700 text-lg font-medium italic">Where every swirl tells a tale</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h4 className="font-semibold text-amber-900 mb-3">Quick Links</h4>
-              <div className="space-y-2 text-amber-700">
-                <p>
-                  <a href="/menu" className="hover:text-[#f1af7b] transition-colors">
-                    Menu
-                  </a>
-                </p>
-                <p>
-                  <a href="#about" className="hover:text-[#f1af7b] transition-colors">
-                    About Us
-                  </a>
-                </p>
-                <p>
-                  <a href="#visit" className="hover:text-[#f1af7b] transition-colors">
-                    Visit
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold text-amber-900 mb-3">Contact</h4>
-              <div className="space-y-2 text-amber-700">
-                <p>I-8 Markaz, Islamabad</p>
-                  <p>+92 317 581 8580</p>
-                <p>hello@kurtos.pk</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold text-amber-900 mb-3">Follow Us</h4>
-              <div className="flex justify-center gap-4">
-                <a
-                  href="https://www.facebook.com/kurtospakistan/?ref=_xav_ig_profile_page_web#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-[#f1af7b] bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors cursor-pointer group"
-                >
-                  <Facebook className="w-5 h-5 text-white group-hover:text-[#f1af7b]" />
-                </a>
-                <a
-                  href="https://www.instagram.com/kurtos_pakistan?igsh=aXd0ejVhZWs2dHZq"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-[#f1af7b] bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors cursor-pointer group"
-                >
-                  <Instagram className="w-5 h-5 text-white group-hover:text-[#f1af7b]" />
-                </a>
-                <a
-                  href="https://www.threads.com/@kurtos_pakistan?xmt=AQF0C60q7JfjWUuByEFVNvs589Dz41vV7clYsRxaDfwivyI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-[#f1af7b] bg-opacity-30 rounded-full flex items-center justify-center hover:bg-opacity-50 transition-colors cursor-pointer group"
-                >
-                  <svg
-                    className="w-5 h-5 text-white group-hover:text-[#f1af7b]"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.068v-.036c0-3.518.85-6.373 2.495-8.424C5.845 1.205 8.598.024 12.179 0h.007c3.581.024 6.334 1.205 8.184 3.509C21.65 5.56 22.5 8.414 22.5 11.932v.036c0 3.518-.85 6.373-2.495 8.424C18.155 22.795 15.402 23.976 11.821 24h-.007z" />
-                    <path d="M12 16.5c-2.481 0-4.5-2.019-4.5-4.5s2.019-4.5 4.5-4.5 4.5 2.019 4.5 4.5-2.019 4.5-4.5 4.5zm0-7c-1.378 0-2.5 1.122-2.5 2.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5z" />
-                    <circle cx="16.5" cy="7.5" r="1.5" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-orange-200 mt-12 pt-8 text-center text-amber-600">
-            <p>&copy; 2024 Kurtos I-8 Islamabad. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

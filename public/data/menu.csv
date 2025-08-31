@@ -1,0 +1,125 @@
+Category,Subcategory,Item,Size,Price_Rs,Notes,Image
+Build Your Own Kurtos,,Sugar/Glazed (cone),,,Price not visible on menu,cone.jpg
+Build Your Own Kurtos,,Cinnamon & Sugar (cone),,,Price not visible on menu,cone.jpg
+Build Your Own Kurtos,,Red Velvet (cone),,,Price not visible on menu,cone.jpg
+Build Your Own Kurtos,,Brownie (base),,350.0,,generic.jpg
+Build Your Own Kurtos,,Chimney (base),,550.0,,kurtos.jpg
+Build Your Own Kurtos - Spreads,,Chocolate,With Cone,60.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Chocolate,With Chimney,100.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Peanut Butter,With Cone,70.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Peanut Butter,With Chimney,110.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Lotus,With Cone,90.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Lotus,With Chimney,140.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Strawberry Jam,With Cone,80.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Strawberry Jam,With Chimney,110.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Blueberry Jam,With Cone,80.0,,dressing.jpg
+Build Your Own Kurtos - Spreads,,Blueberry Jam,With Chimney,110.0,,dressing.jpg
+Build Your Own Kurtos - Fillings,,Custard,,150.0,,all_items.jpg
+Build Your Own Kurtos - Fillings,,Vanilla Ice cream,,200.0,,all_items.jpg
+Build Your Own Kurtos - Fillings,,Sweet cream,,100.0,,all_items.jpg
+Build Your Own Kurtos - Fillings,,Ice cream + Brownie,,250.0,,all_items.jpg
+Build Your Own Kurtos - Fillings,,Seasonal Fruits + Chocolate,,250.0,,all_items.jpg
+Build Your Own Kurtos - Fillings,,Seasonal Fruits + Ice cream,,250.0,,all_items.jpg
+Signature Sandwiches,,Club Sandwich,,1125.0,,generic.jpg
+Signature Sandwiches,,"Beef, Onion & Green Chilli",,1275.0,,generic.jpg
+Signature Sandwiches,,Spicy Tandoori Chicken Sandwich,,1195.0,,generic.jpg
+Signature Sandwiches,,Grilled Tarragon Lime Chicken Sandwich,,1195.0,,generic.jpg
+Cold Sandwiches,,Curry Egg Sandwich,,450.0,,generic.jpg
+Cold Sandwiches,,Chicken Mexican Sandwich,,550.0,,generic.jpg
+Cold Sandwiches,,Beef Pickle Sandwich,,625.0,,generic.jpg
+Breakfast,,Kurtos Special English Breakfast,,1650.0,,all_items.jpg
+Breakfast,,Scrambled Eggs,,1050.0,,generic.jpg
+Breakfast,,Spanish Omelette,,950.0,,generic.jpg
+Breakfast,,Chicken and Mushroom Omelette,,950.0,,generic.jpg
+Breakfast,,Chicken and Cheese Omelette,,1050.0,,generic.jpg
+Breakfast,,Shakshuka,,750.0,,generic.jpg
+Sweet Mornings,,Smoothie Bowl,,750.0,,all_items.jpg
+Sweet Mornings,,Fluffy Loaded Waffle,,795.0,,generic.jpg
+Sweet Mornings,,Fluffy Pancakes with Banana,,650.0,,generic.jpg
+Hot Beverages,,Espresso,R,475.0,,tea_coffee.jpg
+Hot Beverages,,Espresso,L,575.0,,tea_coffee.jpg
+Hot Beverages,,Espresso Macchiato,R,475.0,,tea_coffee.jpg
+Hot Beverages,,Espresso Macchiato,L,575.0,,tea_coffee.jpg
+Hot Beverages,,Classic Americano,R,500.0,,tea_coffee.jpg
+Hot Beverages,,Classic Americano,L,600.0,,tea_coffee.jpg
+Hot Beverages,,Cortado,,,Price not visible on menu,tea_coffee.jpg
+Hot Beverages,,Cafe Latte,R,720.0,,tea_coffee.jpg
+Hot Beverages,,Cafe Latte,L,820.0,,tea_coffee.jpg
+Hot Beverages,,Flat White,R,720.0,,tea_coffee.jpg
+Hot Beverages,,Flat White,L,820.0,,tea_coffee.jpg
+Hot Beverages,,Creamy Cappuccino,R,720.0,,tea_coffee.jpg
+Hot Beverages,,Creamy Cappuccino,L,820.0,,tea_coffee.jpg
+Hot Beverages,,Vanilla Whisper Latte,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Vanilla Whisper Latte,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Hazelnut Latte,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Hazelnut Latte,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Irish Latte,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Irish Latte,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Caramel Kiss Latte,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Caramel Kiss Latte,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Spanish Bliss Latte,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Spanish Bliss Latte,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Mochaccino,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Mochaccino,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Caramelito,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Caramelito,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Macha Latte,R,650.0,,tea_coffee.jpg
+Hot Beverages,,Macha Latte,L,750.0,,tea_coffee.jpg
+Hot Beverages,,Mocca Magic Latte,R,475.0,,tea_coffee.jpg
+Hot Beverages,,Mocca Magic Latte,L,575.0,,tea_coffee.jpg
+Hot Beverages,,Kurtos Special Coffee,R,750.0,,tea_coffee.jpg
+Hot Beverages,,Kurtos Special Coffee,L,850.0,,tea_coffee.jpg
+Hot Beverages,,Hot Chocolate,R,650.0,,tea_coffee.jpg
+Hot Beverages,,Hot Chocolate,L,750.0,,tea_coffee.jpg
+Hot Beverages,,Mix Tea,,395.0,Single price,tea_coffee.jpg
+Cold Beverages,,Iced Americano,R,500.0,,tea_coffee.jpg
+Cold Beverages,,Iced Americano,L,600.0,,tea_coffee.jpg
+Cold Beverages,,Iced Latte,R,720.0,,tea_coffee.jpg
+Cold Beverages,,Iced Latte,L,820.0,,tea_coffee.jpg
+Cold Beverages,,Iced Vanilla Latte,R,750.0,,tea_coffee.jpg
+Cold Beverages,,Iced Vanilla Latte,L,850.0,,tea_coffee.jpg
+Cold Beverages,,Iced Caramel Latte,R,750.0,,tea_coffee.jpg
+Cold Beverages,,Iced Caramel Latte,L,850.0,,tea_coffee.jpg
+Cold Beverages,,Iced Spanish Latte,R,750.0,,tea_coffee.jpg
+Cold Beverages,,Iced Spanish Latte,L,850.0,,tea_coffee.jpg
+Cold Beverages,,Iced Hazelnut Latte,R,750.0,,tea_coffee.jpg
+Cold Beverages,,Iced Hazelnut Latte,L,850.0,,tea_coffee.jpg
+Cold Beverages,,Iced Mocca Latte,R,750.0,,tea_coffee.jpg
+Cold Beverages,,Iced Mocca Latte,L,850.0,,tea_coffee.jpg
+Cold Beverages,,Iced Irish Latte,R,750.0,,tea_coffee.jpg
+Cold Beverages,,Iced Irish Latte,L,850.0,,tea_coffee.jpg
+Cold Beverages,,Affogato,R,585.0,,tea_coffee.jpg
+Cold Beverages,,Affogato,L,685.0,,tea_coffee.jpg
+Cold Beverages,,Add-on Flavour,,100.0,Add Rs. 100,tea_coffee.jpg
+Frozen Frappes,,Caramel Frappe,R,850.0,,mojito.jpg
+Frozen Frappes,,Caramel Frappe,L,950.0,,mojito.jpg
+Frozen Frappes,,Mocca Frappe,R,850.0,,mojito.jpg
+Frozen Frappes,,Mocca Frappe,L,950.0,,mojito.jpg
+Frozen Frappes,,Lotus Frappe,R,850.0,,mojito.jpg
+Frozen Frappes,,Lotus Frappe,L,950.0,,mojito.jpg
+Rich Mojitos,,Passion Mojito,R,595.0,,mojito.jpg
+Rich Mojitos,,Passion Mojito,L,695.0,,mojito.jpg
+Rich Mojitos,,Kiwi Mojito,R,595.0,,mojito.jpg
+Rich Mojitos,,Kiwi Mojito,L,695.0,,mojito.jpg
+Rich Mojitos,,Strawberry Mojito,R,595.0,,mojito.jpg
+Rich Mojitos,,Strawberry Mojito,L,695.0,,mojito.jpg
+Flavoured Shakes,,Cookie Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Cookie Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Classic Vanilla Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Classic Vanilla Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Brownie Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Brownie Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Mars Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Mars Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Snickers Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Snickers Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Nutella Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Nutella Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Lotus Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Lotus Shake,L,950.0,,mojito.jpg
+Flavoured Shakes,,Oreo Shake,R,850.0,,mojito.jpg
+Flavoured Shakes,,Oreo Shake,L,950.0,,mojito.jpg
+Kurtos' Specials,,Ice cream,,300.0,,kurotss.jpg
+Kurtos' Specials,,Brownie,,400.0,,kurotss.jpg
+Kurtos' Specials,,Ice cream + Brownie,,450.0,,kurotss.jpg
+Kurtos' Specials,,Brownie Melt with Icecream,,795.0,,kurotss.jpg

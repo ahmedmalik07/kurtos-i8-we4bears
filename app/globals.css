@@ -1,9 +1,207 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Responsive Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Container Classes for Responsiveness */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding: 0 2rem;
+  }
+}
+
+/* Responsive Typography */
+.responsive-heading {
+  font-size: 1.875rem; /* 30px */
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .responsive-heading {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-heading {
+    font-size: 2.5rem; /* 40px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-heading {
+    font-size: 3rem; /* 48px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-heading {
+    font-size: 3.5rem; /* 56px */
+  }
+}
+
+/* Responsive Grid System */
+.responsive-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    gap: 2rem;
+  }
+  
+  .responsive-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Image Responsive Classes */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.responsive-image-square {
+  aspect-ratio: 1 / 1;
+}
+
+.responsive-image-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 640px) {
+  .responsive-image-mobile {
+    height: 200px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .responsive-image-tablet {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .responsive-image-desktop {
+    height: 400px;
+  }
+}
+
+/* Spacing Utilities */
+.responsive-padding-y {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-padding-y {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding-y {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-padding-y {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Button Responsive Styles */
+.responsive-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .responsive-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-button {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Card Responsive Styles */
+.responsive-card {
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-card {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-card {
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hover-scale:hover {
+    transform: none;
+  }
+  
+  .touch-friendly {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* Custom Animation Classes */
@@ -41,12 +239,157 @@ html {
 }
 
 @keyframes breathing {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.05);
   }
+}
+
+/* Menu-specific animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(241, 175, 123, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(241, 175, 123, 0.8);
+  }
+}
+
+/* Utility classes for animations */
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar for menu */
+.menu-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.menu-scrollbar::-webkit-scrollbar-thumb {
+  background: #f1af7b;
+  border-radius: 4px;
+}
+
+.menu-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e89b66;
+}
+
+/* Loading shimmer effect */
+.shimmer {
+  background: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-size: 800px 104px;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* Hover effects for menu items */
+.menu-item-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Search input focus effects */
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(241, 175, 123, 0.1);
+  border-color: #f1af7b;
+}
+
+/* Category filter button effects */
+.category-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.category-btn:hover::before {
+  left: 100%;
 }
 
 .animate-rise-up {
@@ -208,8 +551,10 @@ html {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   /* Updated font configuration to use Avenir Next with fallbacks */
-  --font-serif: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --font-sans: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-serif: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    system-ui, sans-serif;
+  --font-sans: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    system-ui, sans-serif;
 }
 
 @layer base {
@@ -228,7 +573,7 @@ html {
 }
 
 .wavy-divider::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -1px;
   left: 0;
@@ -302,13 +647,14 @@ html {
 
 .sticker-image img {
   border: 8px solid #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
   filter: drop-shadow(0 8px 20px rgba(241, 175, 123, 0.2));
   position: relative;
 }
 
 .sticker-image::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -12px;
   left: -12px;
@@ -321,13 +667,17 @@ html {
 }
 
 .sticker-image::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -8px;
   left: -8px;
   right: -8px;
   bottom: -8px;
-  background: linear-gradient(45deg, rgba(241, 175, 123, 0.1), rgba(245, 196, 154, 0.1));
+  background: linear-gradient(
+    45deg,
+    rgba(241, 175, 123, 0.1),
+    rgba(245, 196, 154, 0.1)
+  );
   border-radius: 1.5rem;
   z-index: -2;
 }
@@ -336,13 +686,15 @@ html {
 .cutout-sticker {
   position: relative;
   display: inline-block;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .cutout-sticker:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.2)) drop-shadow(0 6px 15px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 6px 15px rgba(0, 0, 0, 0.15));
 }
 
 .cutout-sticker img {
@@ -355,12 +707,13 @@ html {
 .sticker-cutout {
   position: relative;
   display: inline-block;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .sticker-cutout::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -4px;
   left: -4px;
@@ -374,11 +727,72 @@ html {
 
 .sticker-cutout:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.2)) drop-shadow(0 6px 15px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 6px 15px rgba(0, 0, 0, 0.15));
 }
 
 .sticker-cutout img {
   position: relative;
   z-index: 1;
   border-radius: 50%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Delay classes for animations */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animate-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animate-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animate-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animate-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animate-delay-1100 {
+  animation-delay: 1100ms;
 }

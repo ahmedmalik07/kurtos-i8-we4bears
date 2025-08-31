@@ -45,7 +45,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="theme-color" content="#f1af7b" />
       </head>
-      <body suppressHydrationWarning={true}>
+      <body>
         {children}
         <Toaster />
       </body>
