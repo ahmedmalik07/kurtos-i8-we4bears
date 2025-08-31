@@ -52,10 +52,10 @@ export default function KurtosLandingPage() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-30">
+        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center relative z-30">
           <div className="text-center lg:text-left">
             <div className="animate-rise-up-slow animate-delay-300">
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-amber-900 mb-6 leading-tight">
+            <h1 className="font-serif text-3xl lg:text-4xl xl:text-5xl font-bold text-amber-900 mb-4 leading-tight">
               Freshly Baked
               <span className="block text-[#f1af7b] relative">
                 Chimney Cakes
@@ -70,10 +70,10 @@ export default function KurtosLandingPage() {
                 </svg>
               </span>
             </h1>
-            <p className="text-lg text-amber-700 mb-2 leading-relaxed italic font-medium">
+            <p className="text-base text-amber-700 mb-2 leading-relaxed italic font-medium">
               Where every swirl tells a tale
             </p>
-            <p className="text-lg text-amber-700 mb-8 leading-relaxed">
+            <p className="text-base text-amber-700 mb-6 leading-relaxed">
               Authentic Hungarian kürtőskalács baked fresh daily in the heart of Islamabad. Build your perfect chimney
               cake with premium coatings, creamy fillings, and delicious toppings.
             </p>
@@ -129,16 +129,16 @@ export default function KurtosLandingPage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 mb-4 md:mb-6 animate-rise-up animate-delay-100 hover:scale-105 transition-transform duration-300 leading-tight tracking-tight">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-amber-900 mb-3 md:mb-4 animate-rise-up animate-delay-100 hover:scale-105 transition-transform duration-300 leading-tight tracking-tight">
               Kurtos Signature Delights
             </h2>
-            <p className="font-sans text-amber-700 text-base sm:text-lg md:text-xl max-w-3xl mx-auto animate-rise-up animate-delay-150 hover:text-amber-600 transition-colors duration-300 px-4 leading-relaxed font-medium">
+            <p className="font-sans text-amber-700 text-sm sm:text-base md:text-lg max-w-3xl mx-auto animate-rise-up animate-delay-150 hover:text-amber-600 transition-colors duration-300 px-4 leading-relaxed font-medium">
               Curated with love, perfected with tradition, and made to be remembered—every creation is a piece of our story.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {[
               {
                 name: "Classic Cinnamon Sugar",
@@ -176,14 +176,14 @@ export default function KurtosLandingPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-900/3 via-orange-800/5 to-yellow-800/3 group-hover:from-amber-900/5 group-hover:via-orange-800/7 group-hover:to-yellow-800/5 transition-all duration-700 rounded-2xl lg:rounded-3xl"></div>
                 
                 {/* Refined content container */}
-                <div className="relative z-10 p-6 sm:p-7 lg:p-8">
+                <div className="relative z-10 p-4 sm:p-5 lg:p-6">
                   {/* Enhanced image container with sophisticated hover effects */}
-                  <div className="relative mb-5 md:mb-6 group-hover:transform group-hover:-translate-y-1 transition-all duration-500">
+                  <div className="relative mb-3 md:mb-4 group-hover:transform group-hover:-translate-y-1 transition-all duration-500">
                     <div className="relative overflow-hidden rounded-xl lg:rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-amber-200/30">
                       <img
                         src={item.image || "/placeholder.svg"}
                         alt={item.name}
-                        className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        className="w-full h-40 sm:h-48 md:h-52 lg:h-60 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
                       
                       {/* Refined image overlay */}
@@ -200,11 +200,11 @@ export default function KurtosLandingPage() {
                   </div>
                   
                   {/* Enhanced typography with Avenir Next consistency */}
-                  <div className="space-y-3 md:space-y-4">
-                    <h3 className="font-sans text-lg sm:text-xl lg:text-2xl font-bold text-amber-900 group-hover:text-amber-800 transition-colors duration-300 group-hover:transform group-hover:scale-[1.02] leading-tight tracking-tight">
+                  <div className="space-y-2 md:space-y-3">
+                    <h3 className="font-sans text-base sm:text-lg lg:text-xl font-bold text-amber-900 group-hover:text-amber-800 transition-colors duration-300 group-hover:transform group-hover:scale-[1.02] leading-tight tracking-tight">
                       {item.name}
                     </h3>
-                    <p className="font-sans text-amber-700 leading-relaxed group-hover:text-amber-600 transition-colors duration-300 text-sm md:text-base font-medium">
+                    <p className="font-sans text-amber-700 leading-relaxed group-hover:text-amber-600 transition-colors duration-300 text-xs md:text-sm font-medium">
                       {item.description}
                     </p>
                   </div>

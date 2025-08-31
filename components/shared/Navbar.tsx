@@ -21,30 +21,30 @@ export default function Navbar({ currentPage = "" }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-orange-100/50 shadow-lg">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4 flex items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-3 flex items-center">
         {/* Left side - Mobile menu + Logo */}
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className="flex items-center gap-2">
           {/* Mobile Navigation Toggle */}
           <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
-              className="p-2 text-amber-800 hover:bg-amber-50 touch-friendly"
+              className="p-1.5 text-amber-800 hover:bg-amber-50 touch-friendly"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4" />
             </Button>
           </div>
           
           {/* Logo and Signboard */}
-          <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200">
-            <img src="/logo.png" alt="Kurtos Logo" className="w-7 h-7 md:w-8 md:h-8 object-contain" />
-            <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-6 md:h-8 w-auto object-contain" />
+          <a href="/" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity duration-200">
+            <img src="/logo.png" alt="Kurtos Logo" className="w-6 h-6 md:w-7 md:h-7 object-contain" />
+            <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-5 md:h-6 w-auto object-contain" />
           </a>
         </div>
 
         {/* Center - Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-4 lg:gap-8 text-sm lg:text-base text-amber-800 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex items-center gap-3 lg:gap-6 text-xs lg:text-sm text-amber-800 absolute left-1/2 transform -translate-x-1/2">
           {navItems.map((item) => {
             const isActive = 
               (currentPage === "home" && item.href === "/") ||

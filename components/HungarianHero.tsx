@@ -91,34 +91,34 @@ const HungarianHero = () => {
       {/* Main Content - Split Layout */}
       <div className="relative z-10 flex items-center min-h-screen px-4 pt-20 md:pt-24">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             
             {/* Left Side - Text Content */}
             <div className={`transform transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#805334] mb-6 leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#805334] mb-4 leading-tight">
                 A Hungarian Classic,
                 <br />
                 <span className="bg-gradient-to-r from-[#f1af7b] to-[#805334] bg-clip-text text-transparent">
                   Freshly Baked for You
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-[#805334]/80 mb-8 leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg text-[#805334]/80 mb-6 leading-relaxed">
                 From Hungary's heart to your hands, a tale of tradition, a taste you'll never forget.
                 <br />
                 <span className="text-[#f1af7b] font-medium">Crisp outside, soft within</span> — rolled in sweetness and baked to perfection.
               </p>
               
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button 
                   onClick={() => window.open('https://www.foodpanda.pk/restaurant/s7uw/kurtos-kalash', '_blank')}
-                  className="px-8 py-4 bg-gradient-to-r from-[#f1af7b] to-[#805334] text-white font-bold text-lg rounded-full hover:shadow-lg hover:shadow-[#f1af7b]/25 transform hover:scale-105 transition-all duration-300"
+                  className="px-6 py-3 bg-gradient-to-r from-[#f1af7b] to-[#805334] text-white font-bold text-sm lg:text-base rounded-full hover:shadow-lg hover:shadow-[#f1af7b]/25 transform hover:scale-105 transition-all duration-300"
                 >
                   Order Hungarian Treats 🥨
                 </button>
                 <button 
                   onClick={() => window.location.href = '/menu'}
-                  className="px-8 py-4 bg-white border-2 border-[#f1af7b] text-[#805334] font-bold text-lg rounded-full hover:bg-[#f1af7b] hover:text-white transition-all duration-300"
+                  className="px-6 py-3 bg-white border-2 border-[#f1af7b] text-[#805334] font-bold text-sm lg:text-base rounded-full hover:bg-[#f1af7b] hover:text-white transition-all duration-300"
                 >
                   Explore Menu 📜
                 </button>
@@ -126,19 +126,19 @@ const HungarianHero = () => {
             </div>
 
             {/* Right Side - Carousel */}
-            <div className="relative h-96 lg:h-[500px] w-full">
-              {/* Curved background platform - utilizing more space */}
-              <div className="absolute bottom-0 left-1/3 right-0 h-32 md:h-40 bg-gradient-to-t from-white/60 via-gray-50/40 to-transparent rounded-t-[50%] transform scale-x-130"></div>
+            <div className="relative h-80 lg:h-96 w-full">
+              {/* Curved background platform - more compact */}
+              <div className="absolute bottom-0 left-1/4 right-0 h-24 md:h-32 bg-gradient-to-t from-white/60 via-gray-50/40 to-transparent rounded-t-[50%] transform scale-x-120"></div>
               
-              {/* Food Items Carousel - Maximum space utilization */}
-              <div className="absolute inset-0 flex items-center justify-end pr-0">
-                <div className="relative w-full h-full max-w-5xl max-h-5xl">
+              {/* Food Items Carousel - Adjusted for better visibility */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-full h-full max-w-4xl max-h-4xl">
                   {foodItems.map((item, index) => {
                     const angle = (rotation + (index * 90)) * (Math.PI / 180) // 90 degrees apart for 4 items
-                    const radius = 240 // Increased radius for maximum space utilization
+                    const radius = 180 // Reduced radius for better fit
                     const x = Math.cos(angle) * radius
-                    const y = Math.sin(angle) * radius * 0.8 // More vertical movement to fully use top space
-                    const scale = 0.5 + 0.7 * Math.sin(angle + Math.PI/2) // Better scale variation
+                    const y = Math.sin(angle) * radius * 0.7 // Less vertical movement
+                    const scale = 0.6 + 0.5 * Math.sin(angle + Math.PI/2) // Better scale variation
                     const zIndex = Math.floor(50 + 50 * Math.sin(angle + Math.PI/2))
                     
                     return (
@@ -148,10 +148,10 @@ const HungarianHero = () => {
                         style={{
                           transform: `translate(${x}px, ${y}px) scale(${scale})`,
                           zIndex: zIndex,
-                          left: '75%', // Maximum right positioning
-                          top: '35%', // Higher to maximize top space usage
-                          marginLeft: '-120px',
-                          marginTop: '-120px',
+                          left: '60%', // Better center positioning
+                          top: '40%', // Better vertical centering
+                          marginLeft: '-80px',
+                          marginTop: '-80px',
                         }}
                       >
                         <div 
@@ -166,17 +166,17 @@ const HungarianHero = () => {
                             style={{ backgroundColor: item.color }}
                           ></div>
                           
-                          {/* Food item image - Clean background-free images */}
-                          <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 transform group-hover:scale-105 transition-transform duration-1000">
+                          {/* Food item image - Smaller, cleaner images */}
+                          <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 transform group-hover:scale-105 transition-transform duration-1000">
                             <img 
                               src={item.image} 
                               alt={item.name}
                               className="w-full h-full object-contain"
                               style={{
                                 background: 'transparent',
-                                filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.06)) contrast(1.05) saturate(1.1)',
+                                filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.05)) contrast(1.05) saturate(1.1)',
                                 mixBlendMode: 'normal',
-                                maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)', // Soft edge removal
+                                maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
                                 WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)'
                               }}
                             />
@@ -208,43 +208,42 @@ const HungarianHero = () => {
         </div>
       </div>
 
-      {/* Bottom Stats - Original Implementation with Distinguishable Background */}
+      {/* Bottom Stats - Compact Implementation */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
-        {/* Original whitish background but distinguishable */}
         <div className="bg-gradient-to-t from-white/95 via-gray-50/90 to-gray-100/80 backdrop-blur-sm border-t border-[#f1af7b]/30 shadow-lg">
-          <div className={`max-w-6xl mx-auto px-4 py-6 transform transition-all duration-1000 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="grid grid-cols-3 gap-4 text-center">
+          <div className={`max-w-6xl mx-auto px-4 py-3 transform transition-all duration-1000 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="grid grid-cols-3 gap-3 text-center">
               <div className="group hover:scale-105 transition-transform duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#805334] mb-1">
+                <div className="text-lg md:text-xl font-bold text-[#805334] mb-0.5">
                   {animatedNumbers.served}+
                 </div>
-                <div className="text-xs md:text-sm text-[#805334]/70 uppercase tracking-wider font-medium">
+                <div className="text-xs text-[#805334]/70 uppercase tracking-wider font-medium">
                   Kurtos Served
                 </div>
               </div>
               
               <div className="group hover:scale-105 transition-transform duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#805334] mb-1">
+                <div className="text-lg md:text-xl font-bold text-[#805334] mb-0.5">
                   {animatedNumbers.fresh}%
                 </div>
-                <div className="text-xs md:text-sm text-[#805334]/70 uppercase tracking-wider font-medium">
+                <div className="text-xs text-[#805334]/70 uppercase tracking-wider font-medium">
                   Fresh Daily
                 </div>
               </div>
               
               <div className="group hover:scale-105 transition-transform duration-300">
-                <div className="text-2xl md:text-3xl font-bold text-[#805334] mb-1">
+                <div className="text-lg md:text-xl font-bold text-[#805334] mb-0.5">
                   Since {animatedNumbers.year}
                 </div>
-                <div className="text-xs md:text-sm text-[#805334]/70 uppercase tracking-wider font-medium">
+                <div className="text-xs text-[#805334]/70 uppercase tracking-wider font-medium">
                   Traditional Recipe
                 </div>
               </div>
             </div>
             
-            {/* Branding text */}
-            <div className="text-center mt-4">
-              <p className="text-sm text-[#805334]/60 italic">
+            {/* Compact branding text */}
+            <div className="text-center mt-2">
+              <p className="text-xs text-[#805334]/60 italic">
                 "Every Kurtos tells a story of Hungarian tradition"
               </p>
             </div>

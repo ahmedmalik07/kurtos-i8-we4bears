@@ -69,6 +69,34 @@ const parseCSV = (csvText: string): MenuItem[] => {
   })
 }
 
+// Function to get the appropriate image based on category
+const getCategoryImage = (category: string, originalImage: string): string => {
+  // Categories that should show the shake image (cold/iced/frozen)
+  const shakeCategories = new Set([
+    "Cold Beverages",
+    "Frozen Frappes",
+    "Rich Mojitos",
+    "Flavoured Shakes",
+    "Flavoured Shakes ",
+    "Flavoured Shakes",
+    "Ice Creams",
+    "Ice Cream",
+  ])
+
+  if (shakeCategories.has(category)) {
+    return "shake.png"
+  }
+
+  // Sandwich categories should show sandwich image
+  const sandwichCategories = new Set(["Signature Sandwiches", "Cold Sandwiches", "Sandwiches"])
+  if (sandwichCategories.has(category)) {
+    return "sandwich.jpeg"
+  }
+
+  // Leave Hot Beverages and everything else as-is
+  return originalImage
+}
+
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([])
   const [searchTerm, setSearchTerm] = useState("")
@@ -349,7 +377,7 @@ export default function MenuPage() {
                                     {/* Image */}
                                     <div className="relative h-48 overflow-hidden">
                                       <img
-                                        src={`/assets/${firstItem.image}`}
+                                        src={`/assets/${getCategoryImage(category, firstItem.image)}`}
                                         alt={itemName}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         onError={(e) => {

@@ -2,7 +2,7 @@
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 lg:py-24 relative overflow-hidden">
+    <section id="about" className="py-12 lg:py-16 relative overflow-hidden">
       {/* Sophisticated background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-amber-50/30"></div>
@@ -11,7 +11,7 @@ const AboutSection = () => {
       </div>
       
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image Side - Left */}
           <div className="relative group order-2 lg:order-1">
             {/* Main image container with sophisticated hover effects */}
@@ -24,7 +24,7 @@ const AboutSection = () => {
                 <img
                   src="/assets/all_items.jpg"
                   alt="Kurtos Story"
-                  className="w-full h-64 md:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  className="w-full h-48 md:h-64 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
                 
                 {/* Sophisticated overlay */}
@@ -46,15 +46,15 @@ const AboutSection = () => {
           </div>
           
           {/* Content Side - Right */}
-          <div className="space-y-8 order-1 lg:order-2">
+          <div className="space-y-6 order-1 lg:order-2">
             {/* Refined typography */}
-            <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-sm font-medium text-amber-800 border border-amber-200/50">
+            <div className="space-y-3">
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full text-xs font-medium text-amber-800 border border-amber-200/50">
                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
                 <span>Our Story</span>
               </div>
               
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
                 From European{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
                   Journeys
@@ -62,29 +62,29 @@ const AboutSection = () => {
                 {" "}to Pakistani Hearts
               </h2>
               
-              <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
+              <div className="w-12 h-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
             </div>
             
             {/* Elegant story content */}
-            <div className="space-y-6 text-slate-700 leading-relaxed">
-              <p className="text-lg md:text-xl font-light">
+            <div className="space-y-4 text-slate-700 leading-relaxed">
+              <p className="text-base md:text-lg font-light">
                 Born from the wanderlust of an aeronautical engineer, Kurtos brings the authentic taste of European chimney cakes to Pakistan. During travels across Europe's charming cafés, our founder discovered the mesmerizing art of kürtős kalács.
               </p>
               
-              <p className="text-base md:text-lg opacity-90">
+              <p className="text-sm md:text-base opacity-90">
                 What began as admiration for a centuries-old Hungarian tradition has evolved into Pakistan's premier destination for artisanal chimney cakes, where each swirl tells a story of cultural bridge-building through exceptional taste.
               </p>
             </div>
             
-            {/* Sophisticated stats or highlights */}
-            <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="group space-y-2">
-                <div className="text-2xl md:text-3xl font-bold text-amber-600 group-hover:text-orange-600 transition-colors duration-300">500+</div>
-                <div className="text-sm text-slate-600 font-medium">European Cafés Explored</div>
+            {/* Sophisticated stats or highlights - More compact */}
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="group space-y-1">
+                <div className="text-xl md:text-2xl font-bold text-amber-600 group-hover:text-orange-600 transition-colors duration-300">500+</div>
+                <div className="text-xs text-slate-600 font-medium">European Cafés Explored</div>
               </div>
-              <div className="group space-y-2">
-                <div className="text-2xl md:text-3xl font-bold text-amber-600 group-hover:text-orange-600 transition-colors duration-300">100%</div>
-                <div className="text-sm text-slate-600 font-medium">Authentic Recipes</div>
+              <div className="group space-y-1">
+                <div className="text-xl md:text-2xl font-bold text-amber-600 group-hover:text-orange-600 transition-colors duration-300">100%</div>
+                <div className="text-xs text-slate-600 font-medium">Authentic Recipes</div>
               </div>
             </div>
           </div>
