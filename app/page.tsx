@@ -37,18 +37,21 @@ export default function KurtosLandingPage() {
             </a>
           </div>
 
-          {/* Center - Desktop Navigation - Temporarily Hidden */}
-          {/* <div className="hidden md:flex items-center gap-6 text-sm text-amber-800 mx-auto">
+          {/* Center - Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6 text-sm text-amber-800 absolute left-1/2 transform -translate-x-1/2">
             <a href="/menu" className="hover:text-[#f1af7b] transition-colors">
               Menu
             </a>
-            <a href="#about" className="hover:text-[#f1af7b] transition-colors">
-              About
+            <a href="#testimonials" className="hover:text-[#f1af7b] transition-colors">
+              Reviews
             </a>
             <a href="#visit" className="hover:text-[#f1af7b] transition-colors">
               Visit
             </a>
-          </div> */}
+            <a href="#footer" className="hover:text-[#f1af7b] transition-colors">
+              About
+            </a>
+          </div>
 
           {/* Right side - Order Now Button */}
           <div className="ml-auto">
@@ -58,8 +61,8 @@ export default function KurtosLandingPage() {
           </div>
         </div>
 
-        {/* Mobile Menu - Temporarily Hidden */}
-        {/* {mobileMenuOpen && (
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-amber-100 shadow-lg">
             <div className="px-4 py-4 space-y-4">
               <a 
@@ -70,11 +73,11 @@ export default function KurtosLandingPage() {
                 Menu
               </a>
               <a 
-                href="#about" 
+                href="#testimonials" 
                 className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About
+                Reviews
               </a>
               <a 
                 href="#visit" 
@@ -83,9 +86,37 @@ export default function KurtosLandingPage() {
               >
                 Visit
               </a>
+              <a 
+                href="#footer" 
+                className="block text-amber-800 hover:text-[#f1af7b] transition-colors text-lg font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              
+              {/* Mobile Action Buttons */}
+              <div className="pt-4 border-t border-amber-100 space-y-2">
+                <Button 
+                  className="w-full bg-[#f1af7b] hover:bg-[#e89b66] text-white rounded-full py-2 text-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <a href="https://www.foodpanda.pk/restaurant/y3wu/kurtos-i8" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white">
+                    Order Now
+                  </a>
+                </Button>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Kurtos+I-8+Markaz+Islamabad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-white text-[#f1af7b] border border-[#f1af7b] px-4 py-2 rounded-full font-semibold hover:bg-[#f1af7b] hover:text-white transition-colors text-center text-sm"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Visit Our Store
+                </a>
+              </div>
             </div>
           </div>
-        )} */}
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -484,7 +515,7 @@ export default function KurtosLandingPage() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 bg-white">
+      <section id="testimonials" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <TestimonialsSection />
         </div>
@@ -568,7 +599,7 @@ export default function KurtosLandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-amber-50 to-orange-50 py-16 relative overflow-hidden">
+      <footer id="footer" className="bg-gradient-to-br from-amber-50 to-orange-50 py-16 relative overflow-hidden">
         {/* Floating decorations */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="floating-element absolute top-10 left-10 w-3 h-3 bg-[#f1af7b] rounded-full opacity-30"></div>
