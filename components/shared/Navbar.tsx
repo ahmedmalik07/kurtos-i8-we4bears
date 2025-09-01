@@ -38,8 +38,8 @@ export default function Navbar({ currentPage = "" }: NavbarProps) {
           
           {/* Logo and Signboard */}
           <a href="/" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity duration-200">
-            <img src="/logo.png" alt="Kurtos Logo" className="w-6 h-6 md:w-7 md:h-7 object-contain" />
-            <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-5 md:h-6 w-auto object-contain" />
+            <img src="/logo.png" alt="Kurtos Logo" loading="eager" decoding="sync" width="24" height="24" className="w-6 h-6 md:w-7 md:h-7 object-contain" />
+            <img src="/kurtos signboard.png" alt="Kurtos Signboard" loading="eager" decoding="sync" width="96" height="20" className="h-5 md:h-6 w-auto object-contain" />
           </a>
         </div>
 

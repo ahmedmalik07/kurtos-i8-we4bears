@@ -16,10 +16,10 @@ export default function Footer() {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <a href="/" className="hover:opacity-80 transition-opacity duration-200">
-              <img src="/logo.png" alt="Kurtos Logo" className="w-12 h-12 object-contain" />
+              <img src="/logo.png" alt="Kurtos Logo" width={48} height={48} loading="lazy" decoding="async" className="w-12 h-12 object-contain" />
             </a>
             <a href="/" className="hover:opacity-80 transition-opacity duration-200">
-              <img src="/kurtos signboard.png" alt="Kurtos Signboard" className="h-12 w-auto object-contain" />
+              <img src="/kurtos signboard.png" alt="Kurtos Signboard" width={180} height={48} loading="lazy" decoding="async" className="h-12 w-auto object-contain" />
             </a>
           </div>
           <h3 className="font-serif text-2xl font-bold text-amber-900 mb-2"></h3>

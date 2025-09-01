@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+  "convert-images": "node ./scripts/convert-images.js",
     "lint": "next lint",
     "start": "next start"
   },
@@ -63,6 +64,7 @@
     "zod": "3.25.67"
   },
   "devDependencies": {
+  "sharp": "^0.32.0",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",

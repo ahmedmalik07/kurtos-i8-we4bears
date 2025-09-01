@@ -84,7 +84,7 @@ html {
   .responsive-grid {
     gap: 2rem;
   }
-  
+
   .responsive-grid-3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -197,7 +197,7 @@ html {
   .hover-scale:hover {
     transform: none;
   }
-  
+
   .touch-friendly {
     min-height: 44px;
     min-width: 44px;

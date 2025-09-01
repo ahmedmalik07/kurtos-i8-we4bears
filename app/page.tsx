@@ -11,6 +11,7 @@ import { SplashCursor } from "@/components/SplashCursor"
 import { GlowCard } from "@/components/spotlight-card"
 import AboutSection from "@/components/AboutSection"
 import { MapPin, Clock, Phone, Heart, Coffee, Cake, Sparkles, Facebook, Instagram } from "lucide-react"
+import Image from 'next/image'
 import TestimonialsSection from "@/components/ui/testimonials-columns"
 
 export default function KurtosLandingPage() {
@@ -88,6 +89,10 @@ export default function KurtosLandingPage() {
                     <img
                       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2024%2C%202025%2C%2003_39_28%20AM-p76u8RRB8NZNHdsl8XGc5VIhVoe3tp.png"
                       alt="Three delicious kurtos chimney cakes with chocolate, caramel, and berry toppings"
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-auto max-w-lg"
                     />
                   </div>
@@ -121,9 +126,13 @@ export default function KurtosLandingPage() {
       <section id="menu" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
         {/* Top-left roll illustration */}
         <div className="absolute top-4 left-4 opacity-10 pointer-events-none z-0">
-          <img 
-            src="/roll-illustration.png" 
-            alt="Roll illustration top-left" 
+          <Image
+            src="/roll-illustration.png"
+            alt="Roll illustration top-left"
+            width={192}
+            height={192}
+            loading="lazy"
+            decoding="async"
             className="w-32 md:w-48 h-32 md:h-48 object-contain"
           />
         </div>
@@ -183,6 +192,10 @@ export default function KurtosLandingPage() {
                       <img
                         src={item.image || "/placeholder.svg"}
                         alt={item.name}
+                        width={480}
+                        height={320}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-40 sm:h-48 md:h-52 lg:h-60 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
                       
@@ -258,7 +271,7 @@ export default function KurtosLandingPage() {
               <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="relative animate-bounce-slow">
                   <div className="drop-shadow-2xl">
-                    <img src="/kurtos-hero-cone.png" alt="Kurtos cone" className="w-60 h-60 object-contain" />
+                        <img src="/kurtos-hero-cone.png" alt="Kurtos cone" width={240} height={240} loading="eager" decoding="sync" className="w-60 h-60 object-contain" />
                   </div>
                 </div>
               </div>
@@ -358,9 +371,9 @@ export default function KurtosLandingPage() {
           <div className="md:hidden">
             {/* Center Cone Image */}
             <div className="flex justify-center mb-12">
-              <div className="relative animate-bounce-slow">
+                <div className="relative animate-bounce-slow">
                 <div className="drop-shadow-2xl">
-                  <img src="/kurtos-hero-cone.png" alt="Kurtos cone" className="w-32 h-32 object-contain" />
+                  <img src="/kurtos-hero-cone.png" alt="Kurtos cone" width={128} height={128} loading="eager" decoding="sync" className="w-32 h-32 object-contain" />
                 </div>
               </div>
             </div>
@@ -473,9 +486,13 @@ export default function KurtosLandingPage() {
               
               {/* Main image container */}
               <div className="relative overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-                <img
+                <Image
                   src="/morning-section.png"
                   alt="Coffee and kurtos morning experience"
+                  width={1200}
+                  height={720}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 
@@ -541,9 +558,13 @@ export default function KurtosLandingPage() {
                   rel="noopener noreferrer"
                   className="w-full h-full hover:opacity-90 transition-opacity duration-200"
                 >
-                  <img
+                  <Image
                     src="/kurtos-map.png"
                     alt="Kurtos Location Map - I-8 Markaz, Islamabad"
+                    width={1200}
+                    height={720}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </a>

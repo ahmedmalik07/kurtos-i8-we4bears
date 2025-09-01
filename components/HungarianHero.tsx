@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const HungarianHero = () => {
   const [rotation, setRotation] = useState(0)
@@ -46,9 +47,8 @@ const HungarianHero = () => {
     // Number animations
     const animateNumbers = () => {
       const duration = 2000
-      const steps = 60
-      const stepDuration = duration / steps
-      
+  const steps = 60
+  const stepDuration = duration / steps
       let step = 0
       const numberInterval = setInterval(() => {
         step++
@@ -168,9 +168,13 @@ const HungarianHero = () => {
                           
                           {/* Food item image - Smaller, cleaner images */}
                           <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 transform group-hover:scale-105 transition-transform duration-1000">
-                            <img 
-                              src={item.image} 
+                            <Image
+                              src={item.image}
                               alt={item.name}
+                              width={160}
+                              height={160}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-contain"
                               style={{
                                 background: 'transparent',
